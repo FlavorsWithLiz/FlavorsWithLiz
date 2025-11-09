@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flavors With Liz | Food With Personality</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      color: #222;
+      background: #fff;
+    }
+    header {
+      background: #fff8ec;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      color: #444;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { color: #000; }
+    .hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom right, #fff8ec, #fff);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #555;
+    }
+    .btn {
+      background: #000;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    ul {
+      line-height: 1.8;
+      color: #555;
+    }
+    footer {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form button {
+      background: #000;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 6px;
+      margin-top: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .highlight { color: #d4a017; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Flavors With Liz</strong></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#shop">Shop</a>
+      <a href="#custom">Custom</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Food With Personality</h1>
+    <p>Handcrafted jams, cookies, and desserts made with care in Monterey Bay. Every batch is small, every flavor has heart.</p>
+    <a href="#shop" class="btn">Shop Now</a>
+  </section>
+
+  <section id="about">
+    <h2>About Liz</h2>
+    <p>Hi, I’m Liz — a self-taught chef and small-batch maker who believes dessert should be joyful and jams should taste like the fruit they came from. Every jar and cookie is crafted in tiny batches so flavor stays bright, textures stay perfect, and you can feel the care that went into it.</p>
+    <ul>
+      <li>Locally sourced fruit when in season</li>
+      <li>No artificial colors or preservatives</li>
+      <li>Packed and shipped with care from Monterey Bay</li>
+    </ul>
+  </section>
+
+  <section id="shop">
+    <h2>Shop Favorites</h2>
+    <ul>
+      <li><strong>Small-Batch Strawberry Jam</strong> — $9.50</li>
+      <li><strong>Vanilla Peach Jam</strong> — $10</li>
+      <li><strong>Blueberry Lemon Jam</strong> — $10.50</li>
+      <li><strong>Salted Chocolate Chunk Cookies (6)</strong> — $14</li>
+      <li><strong>Brown Butter Oatmeal Raisin (6)</strong> — $13</li>
+      <li><strong>Lemon Sugar Cookies (6)</strong> — $12.50</li>
+    </ul>
+    <p><em>To order, email or use the form below.</em></p>
+  </section>
+
+  <section id="custom">
+    <h2>Custom Orders</h2>
+    <p>From dessert tables to favor jars and seasonal cookie boxes, I’d love to bake something special for your event. Share a few details and I’ll reply within 24 hours.</p>
+    <ul>
+      <li>Weddings, showers, birthdays, corporate gifts</li>
+      <li>Flavor matching and tasting boxes available</li>
+      <li>Local pickup in Monterey Bay; limited delivery</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Liz</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+      <label>Email:</label>
+      <input type="email" name="_replyto" required />
+      <label>Message:</label>
+      <textarea name="message" rows="5" placeholder="Tell me about your order, event, or flavor ideas..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="margin-top:1rem;">Or email me directly at <a href="mailto:FlavorsWithLiz@gmail.com">FlavorsWithLiz@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Flavors With Liz — Food With Personality</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

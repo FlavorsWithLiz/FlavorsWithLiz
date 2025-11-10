@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Small-batch jams and fresh-baked cookies from Monterey Bay">
   
-  <!-- SECURITY FIXES -->
+  <!-- Security headers -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
   
   <title>Flavors With Liz | Food With Personality</title>
   <style>
+    /* Your complete CSS remains the same */
     :root{
       --gold:#d4a017;
       --ink:#111;
@@ -30,10 +30,9 @@
       line-height: 1.6;
     }
 
-    /* All images use HTTPS */
     .banner{
       background: linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.38)), 
-                  url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+                  url('images/logo-background.jpg') center/cover no-repeat;
       color:#fff;
     }
 
@@ -133,7 +132,7 @@
   </script>
 </head>
 <body>
-  <!-- Your complete HTML content -->
+  <!-- Banner with YOUR background photo -->
   <div class="banner">
     <header>
       <div class="brand">
@@ -160,17 +159,15 @@
     </div>
   </div>
 
-  <!-- Rest of your sections with HTTPS images only -->
+  <!-- About Section with YOUR photo -->
   <section id="about">
     <h2>About Liz</h2>
     <div class="about-wrap">
       <div class="about-photo">
-        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80" 
-             alt="Liz Hayes portrait" 
-             loading="lazy">
+        <img src="images/liz-portrait.jpg" alt="Liz Hayes portrait" loading="lazy">
       </div>
       <div>
-        <p class="lead">Hi, I'm Liz — a self-taught chef and small-batch maker.</p>
+        <p class="lead">Hi, I'm Liz — a self-taught chef and small-batch maker. Every jar and cookie is crafted in tiny batches so flavor stays bright, textures stay perfect, and you can feel the care that went into it.</p>
         <ul>
           <li>Locally sourced fruit when in season</li>
           <li>No artificial colors or preservatives</li>
@@ -180,7 +177,117 @@
     </div>
   </section>
 
-  <!-- Continue with all your sections... -->
+  <!-- Jams Section with YOUR product photos -->
+  <section id="jams">
+    <h2>Jams</h2>
+    <p class="lead">Spread-worthy jars cooked low and slow.</p>
+    <div class="grid">
+      <article class="card" data-id="jam-strawberry" data-name="Small-Batch Strawberry Jam" data-price="9.5" data-type="Jam">
+        <div class="media">
+          <img src="images/strawberry-jam.jpg" alt="Small-Batch Strawberry Jam" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="row">
+            <div class="title">Small-Batch Strawberry Jam <span class="pill">Bestseller</span></div>
+          </div>
+          <p class="desc">Sun-ripened berries, lemon, and a hint of vanilla.</p>
+          <div class="row">
+            <div class="price">$9.50</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="jam-peach" data-name="Vanilla Peach Jam" data-price="10" data-type="Jam">
+        <div class="media">
+          <img src="images/peach-jam.jpg" alt="Vanilla Peach Jam" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Vanilla Peach Jam</div>
+          <p class="desc">Golden peaches slow-cooked with Madagascar vanilla.</p>
+          <div class="row">
+            <div class="price">$10.00</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="jam-blueberry" data-name="Blueberry + Lemon Zest Jam" data-price="10.5" data-type="Jam">
+        <div class="media">
+          <img src="images/blueberry-jam.jpg" alt="Blueberry + Lemon Zest Jam" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Blueberry + Lemon Zest Jam</div>
+          <p class="desc">Bright citrus lifts juicy wild blueberries.</p>
+          <div class="row">
+            <div class="price">$10.50</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- Cookies Section with YOUR product photos -->
+  <section id="cookies">
+    <h2>Cookies</h2>
+    <p class="lead">Baked to order.</p>
+    <div class="grid">
+      <article class="card" data-id="cookie-choc" data-name="Salted Chocolate Chunk (6)" data-price="14" data-type="Cookie">
+        <div class="media square">
+          <img src="images/chocolate-cookies.jpg" alt="Salted Chocolate Chunk Cookies" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="row">
+            <div class="title">Salted Chocolate Chunk (6) <span class="pill">New</span></div>
+          </div>
+          <p class="desc">Crisp edges, gooey center, sea salt finish.</p>
+          <div class="row">
+            <div class="price">$14.00</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="cookie-oat" data-name="Brown Butter Oatmeal Raisin (6)" data-price="13" data-type="Cookie">
+        <div class="media square">
+          <img src="images/oatmeal-cookies.jpg" alt="Brown Butter Oatmeal Raisin" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Brown Butter Oatmeal Raisin (6)</div>
+          <p class="desc">Toasty oats, plump raisins, cinnamon.</p>
+          <div class="row">
+            <div class="price">$13.00</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="cookie-lemon" data-name="Lemon Sugar Cookies (6)" data-price="12.5" data-type="Cookie">
+        <div class="media square">
+          <img src="images/lemon-cookies.jpg" alt="Lemon Sugar Cookies" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Lemon Sugar Cookies (6)</div>
+          <p class="desc">Bright lemon glaze, tender crumb.</p>
+          <div class="row">
+            <div class="price">$12.50</div>
+            <div class="spacer"></div>
+            <button class="addbtn">Add to Order</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Rest of your sections... -->
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -23,31 +20,37 @@
   <meta property="og:url" content="https://flavorswithliz.com">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
+  <!-- Twitter / Social Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Flavors With Liz – Small-Batch Fruit Butters & Cookies">
   <meta name="twitter:description" content="Homemade fruit butters, cookies, and sampler boxes — made with love in the Monterey Bay.">
   <meta name="twitter:image" content="https://flavorswithliz.com/images/flavorswithliz-background.jpg">
 
+  <!-- Favicon (Chef Hat) -->
+  <link rel="icon" type="image/png" href="images/chef-hat-icon.png" />
+
   <!-- Security headers -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-  <!-- (Your CSS and remaining code would continue here...) -->
+  <!-- Local business schema (basic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Flavors With Liz",
+    "url": "https://flavorswithliz.com",
+    "description": "Small-batch fruit butters, cookies, and sampler gift boxes made fresh in the Monterey Bay.",
+    "areaServed": "Monterey Bay, California, United States",
+    "servesCuisine": "Bakery, Dessert",
+    "priceRange": "$$"
+  }
+  </script>
 
-</head>
-<body>
-
-<!-- Your full page content should go here. I inserted only the head section with SEO as requested. Let me know if you want me to paste the *entire* page again with SEO included. -->
-
-</body>
-</html>
-  
-  <title>Flavors With Liz</title>
   <style>
     :root{
       --gold:#d4a017;
       --ink:#111;
-      --muted:#666;
+      --muted:#777;
       --bg:#fff;
       --bg-soft:#fff8ec;
       --border:#eee;
@@ -109,6 +112,7 @@
     .body{ padding:1.2rem 1.2rem 1.4rem; flex:1; display: flex; flex-direction: column; }
     .title{ font-weight:700; margin:0 0 .25rem; font-size: 1.1rem; }
     .desc{ color:var(--muted); font-size:.95rem; margin:.25rem 0 .6rem; flex-grow: 1; }
+    .meta-small { font-size: 0.85rem; color: #777; margin-top: 0.25rem; }
     .price{ font-weight:800; font-size: 1.1rem; }
     .pill{ background:#fff3d1; color:#7a5b05; padding:.15rem .5rem; border-radius:999px; font-size:.75rem; font-weight:700 }
     .row{ display:flex; align-items:center; gap:.6rem; margin-top: auto; }
@@ -130,7 +134,7 @@
     .ig{ width:20px; height:20px; display:inline-block; vertical-align:middle; transition: var(--transition); }
     .social a:hover .ig { transform: scale(1.2); }
 
-    /* Center & size the Sampler Gift Box card */
+    /* Gift box center */
     #gift-box .grid {
       max-width: 420px;
       margin: 1.5rem auto 0;
@@ -173,7 +177,34 @@
       font-size:0.95rem;
     }
 
+    .two-col-text{
+      display:grid;
+      gap:1.5rem;
+    }
+    @media(min-width:800px){
+      .two-col-text{
+        grid-template-columns:1.2fr 1fr;
+        align-items:flex-start;
+      }
+    }
+
+    .quote-card{
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1rem 1.3rem;
+      background:#fffdf7;
+      margin-bottom:1rem;
+      font-size:0.95rem;
+    }
+    .quote-name{
+      font-weight:600;
+      margin-top:0.4rem;
+      color:#444;
+    }
+
     footer{ background:#111; color:#eee; text-align:center; padding:2.5rem; font-size:.9rem; margin-top:3rem }
+    footer a { color:#f5d37a; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
 
     @media (max-width: 768px) {
       header { padding: 1rem; }
@@ -190,7 +221,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect (for browsers) -->
   <script>
     if (window.location.protocol === 'http:') {
       window.location.href = 'https:' + window.location.href.substring(5);
@@ -210,12 +241,12 @@
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <nav id="mainNav">
-        <a href="#about">About</a>
-        <a href="#Fruit butters">Fruit Butters</a>
+        <a href="#jams">Fruit Butters</a>
         <a href="#cookies">Cookies</a>
         <a href="#gift-box">Gift Box</a>
-        <a href="#order">Order Form</a>
+        <a href="#order">Order</a>
         <a href="#faq">FAQ</a>
+        <a href="#about">About Me</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -231,7 +262,6 @@
     <h2>Fruit Butters</h2>
     <p class="lead">Spread-worthy fruit butters cooked low and slow. Each jar is 4oz — perfect for toast, waffles, cheese boards, and gifting.</p>
     <p class="lead"><strong>$8 per 4oz jar</strong></p>
-    <!-- 2 x 2 layout here -->
     <div class="grid grid-2">
       <!-- Strawberry -->
       <article class="card" data-id="butter-strawberry" data-name="Strawberry Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
@@ -243,6 +273,7 @@
             <div class="title">Strawberry Fruit Butter <span class="pill">Bestseller</span></div>
           </div>
           <p class="desc">Sun-ripened strawberries, a whisper of lemon, and a touch of warm spice for cozy PB&Js and breakfast boards.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Strawberries, sugar, lemon juice, cinnamon, vanilla.</p>
           <div class="row">
             <div class="price">$8</div>
             <div class="spacer"></div>
@@ -259,6 +290,7 @@
         <div class="body">
           <div class="title">Peach Fruit Butter</div>
           <p class="desc">Golden peaches slowly cooked down until smooth and silky — amazing on biscuits, yogurt, and ice cream.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Peaches, sugar, lemon juice.</p>
           <div class="row">
             <div class="price">$8</div>
             <div class="spacer"></div>
@@ -275,6 +307,7 @@
         <div class="body">
           <div class="title">Apple Fruit Butter</div>
           <p class="desc">Slow-cooked apples with cozy spices that taste like homemade pie in a jar. Perfect for toast and oatmeal.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Apples, sugar, cinnamon, nutmeg, lemon juice.</p>
           <div class="row">
             <div class="price">$8</div>
             <div class="spacer"></div>
@@ -291,6 +324,7 @@
         <div class="body">
           <div class="title">Mixed Fruit Butter</div>
           <p class="desc">A bright blend of seasonal fruits slow-cooked together for a layered, jammy flavor that changes with the harvest.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Seasonal fruit blend (typically strawberries, peaches, apples), sugar, lemon juice.</p>
           <div class="row">
             <div class="price">$8</div>
             <div class="spacer"></div>
@@ -308,7 +342,6 @@
     <h2>Cookies</h2>
     <p class="lead">Baked to order in small batches so they arrive fresh and ready to share.</p>
     <p class="lead"><strong>$10 per half dozen (6 cookies)</strong></p>
-    <!-- 2 x 2 layout here -->
     <div class="grid grid-2">
       <!-- Chocolate Chip -->
       <article class="card" data-id="cookie-choc-chip" data-name="Chocolate Chip Cookies (6)" data-price="10" data-type="Cookies">
@@ -320,6 +353,7 @@
             <div class="title">Chocolate Chip (6) <span class="pill">Classic</span></div>
           </div>
           <p class="desc">Soft and chewy, loaded with chocolate chips and a hint of vanilla for that bakery-style bite.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Flour, butter, sugar, brown sugar, eggs, chocolate chips, vanilla, baking soda, salt.</p>
           <div class="row">
             <div class="price">$10</div>
             <div class="spacer"></div>
@@ -336,6 +370,7 @@
         <div class="body">
           <div class="title">Banana Bread Chocolate Chip (6)</div>
           <p class="desc">All the cozy flavor of banana bread in cookie form, studded with melty chocolate chips.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Flour, butter, sugar, brown sugar, banana, eggs, chocolate chips, vanilla, baking soda, salt.</p>
           <div class="row">
             <div class="price">$10</div>
             <div class="spacer"></div>
@@ -352,6 +387,7 @@
         <div class="body">
           <div class="title">Oatmeal Raisin (6)</div>
           <p class="desc">Chewy oats, plump raisins, and warm cinnamon for a nostalgic, comforting cookie.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Oats, flour, butter, brown sugar, eggs, raisins, cinnamon, baking soda, salt.</p>
           <div class="row">
             <div class="price">$10</div>
             <div class="spacer"></div>
@@ -367,7 +403,8 @@
         </div>
         <div class="body">
           <div class="title">Sugar Cookies (6)</div>
-          <p class="desc">Soft, buttery sugar cookies with a delicate sweetness that is perfect enjoying at any time.</p>
+          <p class="desc">Soft, buttery sugar cookies with a delicate sweetness — perfect for decorating or enjoying as-is.</p>
+          <p class="meta-small"><strong>Ingredients:</strong> Flour, butter, sugar, eggs, vanilla, baking powder, salt.</p>
           <div class="row">
             <div class="price">$10</div>
             <div class="spacer"></div>
@@ -383,7 +420,7 @@
   <!-- Gift / Sampler Box -->
   <section id="gift-box" class="centered">
     <h2>Sampler Gift Box</h2>
-    <p class="leadclass="centered">
+    <p class="lead">
       Want to share Flavors With Liz? Choose a sampler gift box that includes tastes of everything.
     </p>
     <div class="grid">
@@ -396,14 +433,16 @@
             <div class="title">Sampler Gift Box</div>
           </div>
           <p class="desc">
-            Includes four mini fruit butters of each flavor and 8 cookies 2 of each flavor.
+            Includes 4 mini fruit butters of each flavor and 8 cookies 2 of each flavor.
             A thoughtful way to treat friends, family, coworkers, or yourself.
+
           </p>
         
-          <div class="row">
+           <div class="row">
             <div class="price">Custom gift option available</div>
             <div class="spacer"></div>
             <a href="#order" class="addbtn">$25</a>
+
           </div>
         </div>
       </article>
@@ -440,7 +479,7 @@
 
   <div class="sep"></div>
 
-  <!-- About Section (moved below products & order) -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Liz</h2>
     <div class="about-wrap">
@@ -454,9 +493,9 @@
           From sweet fruit butters to fresh-baked cookies, my goal is to make every bite feel warm, comforting, and full of flavor.
         </p>
         <ul>
-          <li>Locally sourced fruit when in season</li>
-          <li>No artificial colors or preservatives — just personality</li>
-          <li>Packed and shipped with care from my home to yours</li>
+          <li>Locally sourced fruit when in season.</li>
+          <li>No artificial colors or preservatives — just personality.</li>
+          <li>Packed and shipped with care from my home to yours.</li>
         </ul>
       </div>
     </div>
@@ -464,12 +503,13 @@
 
   <div class="sep"></div>
 
-  <!-- FAQ Section -->
+  <!-- FAQ + dropdowns -->
   <section id="faq">
     <h2>FAQ</h2>
     <p class="lead">
       A few quick answers to common questions. If you’re still wondering about something, feel free to reach out!
     </p>
+
     <div id="faq-wrapper">
       <details>
         <summary>Where are your treats made?</summary>
@@ -501,7 +541,7 @@
       <details>
         <summary>How long do the fruit butters and cookies stay fresh?</summary>
         <p>
-          Fruit butters keep best when stored in the refrigerator and enjoyed within 2–3 weeks after opening.  
+          Fruit butters keep best when stored in the refrigerator and enjoyed within 2-3 weeks after opening.  
           Cookies are best within 2–3 days of pickup or delivery for peak freshness, 
           but you can freeze them in an airtight container to enjoy later.
         </p>
@@ -518,7 +558,7 @@
       <details>
         <summary>How far in advance should I place my order?</summary>
         <p>
-          For most orders,  up to 5 days’ notice is perfect. For larger or event orders, 
+          For most orders, up to 5 days’ notice is perfect. For larger or event orders, 
           I recommend reaching out at least 2 weeks in advance so I can plan ingredients and baking time.
         </p>
       </details>
@@ -539,13 +579,124 @@
           Once payment is received, I’ll begin preparing your order.
         </p>
       </details>
+
+      <!-- Ways to Enjoy as dropdown -->
+      <details id="uses">
+        <summary>Delicious ways to enjoy fruit butters</summary>
+        <p>
+          Fruit butters are more than just a spread — they’re a little jar of flavor you can use all over your kitchen.
+        </p>
+        <ul>
+          <li>Spread on warm toast, English muffins, or bagels.</li>
+          <li>Swirl into oatmeal, overnight oats, or yogurt bowls.</li>
+          <li>Spoon over waffles, pancakes, or French toast.</li>
+          <li>Pair with cheese boards (they’re lovely with brie, goat cheese, or sharp cheddar).</li>
+          <li>Use as a glaze for chicken or pork for a sweet-savory touch.</li>
+          <li>Bake into muffins, cakes, turnovers, or sandwich cookies.</li>
+          <li>Add to charcuterie boards as a bright, fruity accent.</li>
+        </ul>
+      </details>
+
+      <!-- Pickup & Shipping as dropdown -->
+      <details id="pickup">
+        <summary>Pickup & shipping details</summary>
+        <div class="two-col-text">
+          <div>
+            <p class="lead" style="font-size:0.95rem;">
+              I want your treats to arrive tasting as fresh and delicious as they do in my kitchen. 
+              Here’s how pickup and shipping work for Flavors With Liz.
+            </p>
+            <h4>Local pickup (Monterey Bay)</h4>
+            <p>Pickup is available in the Monterey Bay area. Exact pickup location and time will be confirmed by email after you submit your order. Most pick ups are scheduled for a weekends.</p>
+
+            <h4>Shipping (U.S. only)</h4>
+            <p>Orders are packed with care so that jars and cookies arrive safe and ready to enjoy. I currently ship within the United States.</p>
+          </div>
+          <div>
+            <h4>Processing time</h4>
+            <ul>
+              <li>Standard orders: typically <strong>2–5 days</strong>.</li>
+              <li>Gift boxes or larger/event orders: usually <strong>5–10 days</strong>.</li>
+            </ul>
+            <h4>Shipping time</h4>
+            <ul>
+              <li>Most packages arrive within <strong>2–5 business days</strong> once shipped.</li>
+            </ul>
+            <p><strong>Need it by a certain date?</strong><br>
+            Add your date or event to the notes section on the order form, and I’ll do my best to make it happen.</p>
+          </div>
+        </div>
+      </details>
+
+      <!-- Why choose as dropdown -->
+      <details id="why">
+        <summary>Why choose Flavors With Liz?</summary>
+        <ul>
+          <li><strong>Small-batch quality:</strong> Each jar and cookie is made in limited batches for maximum freshness.</li>
+          <li><strong>Made in Monterey Bay:</strong> Rooted in the local community and inspired by California’s coast and seasons.</li>
+          <li><strong>Real ingredients:</strong> No artificial colors or preservatives — just real fruit, butter, sugar, spices, and a lot of care with sprinkles of personality.</li>
+          <li><strong>Gift-ready:</strong> Perfect for birthdays, thank-yous, holidays, and “just because.”</li>
+          <li><strong>Packed with care:</strong> Boxes are assembled with presentation in mind so they feel special to open.</li>
+        </ul>
+      </details>
+
+      <!-- Kind words as dropdown -->
+      <details id="testimonials">
+        <summary>Kind words from customers</summary>
+        <p class="lead" style="font-size:0.95rem;">
+          Hearing how these treats show up in your homes, offices, and celebrations is one of my favorite parts of this work.
+        </p>
+        <div>
+          <div class="quote-card">
+            “Absolutely Fire Strawberry Butter, top tier flavor and the BEST strawberry butter I’ve ever tasted.”
+            <div class="quote-name">— Justin</div>
+          </div>
+          <div class="quote-card">
+            “The sampler gift boxes were a huge hit for my family during the holiday! Everything tasted fresh and homemade and the presentation was so thoughtful.”
+            <div class="quote-name">— Eugenia</div>
+          </div>
+          <div class="quote-card">
+            “The banana bread chocolate chip cookies are unreal. Soft, flavorful, and now one of my favorites.”
+            <div class="quote-name">— Jeff</div>
+          </div>
+          <div class="quote-card">
+            “The apple butter tastes like pie in a jar. It’s my new favorite thing on toast in the morning.”
+            <div class="quote-name">— Maxine</div>
+          </div>
+        </div>
+      </details>
+
+      <!-- Privacy / terms as dropdown -->
+      <details id="legal">
+        <summary>Privacy, terms & refund policy</summary>
+        <p class="lead" style="font-size:0.95rem;">
+          I like to keep things simple, clear, and kind. Here’s how I handle your information and orders.
+        </p>
+        <h4>Privacy</h4>
+        <p>
+          When you place an order, I collect only the information needed to fulfill it — typically your name, email, and pickup or shipping details.
+          Your information is used solely to communicate about your order and is not sold or shared with third parties for marketing.
+        </p>
+
+        <h4>Terms & refund policy</h4>
+        <p>
+          Because everything is made fresh to order, all sales are final once payment is received. 
+          If something arrives damaged or you have a concern about your order, please email me within 48 hours of delivery or pickup, 
+          and I’ll do my best to make it right.
+        </p>
+        <p>
+          By placing an order, you agree to provide accurate contact and delivery information and to review your order confirmation carefully.
+        </p>
+      </details>
     </div>
   </section>
+
+  <div class="sep"></div>
 
   <!-- Contact / Footer -->
   <section id="contact" class="centered">
     <h2>Contact</h2>
-    <p class="leadclass="centered"">
+    <p class="leadclass="centered">
       Have a question, custom request, or want to chat about a special event? 
       Reach out and we’ll create something delicious together.
     </p>
@@ -559,6 +710,8 @@
 
   <footer>
     &copy; <span id="year"></span> Flavors With Liz. All rights reserved.
+    <br>
+    <a href="#legal">Privacy, Terms & Refund Policy</a>
   </footer>
 
   <script>

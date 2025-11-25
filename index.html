@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Food With Personality">
+  <meta name="description" content="Small-batch fruit butters and cookies by Flavors With Liz. Apple, strawberry, peach, and mixed fruit butters with fresh-baked cookies, plus gift sampler boxes.">
   
   <!-- Security headers -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <title>Flavors With Liz</title>
   <style>
-    /* Your complete CSS remains the same */
     :root{
       --gold:#d4a017;
       --ink:#111;
@@ -32,11 +31,10 @@
 
     .banner{
       background: linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.38)), 
-                  url('images/logo-background.jpg') center/cover no-repeat;
+                  url('images/flavorswithliz-background.jpg') center/cover no-repeat;
       color:#fff;
     }
 
-    /* Rest of your CSS remains exactly the same */
     header{ padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; position: relative; }
     .brand{ display:flex; align-items:center; gap:.6rem; }
     .brand-mark{ width:40px;height:40px;border-radius:999px;background:rgba(255,255,255,.9); display:grid;place-items:center;color:#000;font-weight:900;border:2px solid rgba(0,0,0,.06); }
@@ -73,34 +71,12 @@
     .pill{ background:#fff3d1; color:#7a5b05; padding:.15rem .5rem; border-radius:999px; font-size:.75rem; font-weight:700 }
     .row{ display:flex; align-items:center; gap:.6rem; margin-top: auto; }
     .row .spacer{ flex:1 }
-    .addbtn{ background:var(--ink); color:#fff; padding:.6rem 1rem; border:none; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; transition: var(--transition); }
+    .addbtn{ background:var(--ink); color:#fff; padding:.6rem 1rem; border:none; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; transition: var(--transition); display:inline-block; text-decoration:none; text-align:center; }
     .addbtn:hover { background: var(--gold); transform: scale(1.05); }
     .about-wrap{ display:grid; gap:2rem }
     @media(min-width:900px){ .about-wrap{ grid-template-columns:1fr 1.2fr; align-items: center; } }
     .about-photo{ border:1px solid var(--border); border-radius:18px; overflow:hidden; background:#fafafa; aspect-ratio:4/3; display:grid; place-items:center }
     .about-photo img{ width:100%; height:100%; object-fit:cover; display:block }
-    .cartbar{ position:fixed; right:1rem; bottom:1rem; background:#000; color:#fff; border-radius:12px; padding:.8rem 1.2rem; font-weight:800; cursor:pointer; z-index:50; box-shadow:0 8px 24px rgba(0,0,0,.2); display: flex; align-items: center; gap: 0.5rem; transition: var(--transition); }
-    .cartbar:hover { background: var(--gold); transform: scale(1.05); }
-    .cart-panel{ position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; padding:1rem; z-index:60; backdrop-filter: blur(4px); }
-    .cart-panel.open{ display:flex }
-    .cart-inner{ background:#fff; border-radius:18px; max-width:560px; width:100%; max-height: 90vh; overflow:hidden; box-shadow:0 24px 64px rgba(0,0,0,.25); display: flex; flex-direction: column; }
-    .cart-head{ display:flex; justify-content:space-between; align-items:center; padding:1.2rem 1.5rem; border-bottom:1px solid var(--border) }
-    .cart-body{ max-height:60vh; overflow:auto; padding:1rem 1.5rem; flex-grow: 1; }
-    .cart-item{ display:flex; gap:.75rem; align-items:center; padding:.75rem 0; border-bottom:1px dashed #eee }
-    .cart-item:last-child{ border-bottom:none }
-    .cart-foot{ padding:1.2rem 1.5rem; border-top:1px solid var(--border) }
-    .qbtn{ border:1px solid #ddd; border-radius:8px; padding:.3rem .7rem; cursor:pointer; background:#fff; transition: var(--transition); font-weight: bold; }
-    .qbtn:hover { background: var(--gold); color: white; border-color: var(--gold); }
-    .checkout{ background:var(--ink); color:#fff; border:none; border-radius:10px; padding:.8rem 1rem; font-weight:800; cursor:pointer; width:100%; transition: var(--transition); font-size: 1rem; }
-    .checkout:hover { background: var(--gold); transform: translateY(-2px); }
-    .clear{ background:#f6f6f6; border:none; border-radius:10px; padding:.6rem 1rem; font-weight:700; margin-top:.5rem; width:100%; cursor:pointer; transition: var(--transition); }
-    .clear:hover { background: #e6e6e6; }
-    form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
-    label { font-weight: 600; margin-bottom: 0.25rem; }
-    input, textarea { padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius); font-family: inherit; font-size: 1rem; transition: var(--transition); }
-    input:focus, textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1); }
-    form button[type="submit"] { background: var(--ink); color: white; border: none; border-radius: var(--radius); padding: 0.8rem 1.5rem; font-weight: 700; cursor: pointer; transition: var(--transition); font-size: 1rem; }
-    form button[type="submit"]:hover { background: var(--gold); transform: translateY(-2px); }
     .centered{ text-align:center }
     .centered h2:after { left: 50%; transform: translateX(-50%); }
     .centered ul{ list-style:none; padding:0 }
@@ -108,7 +84,45 @@
     .social{ display:flex; justify-content:center; align-items:center; gap:.6rem; margin-top:1.5rem; }
     .ig{ width:20px; height:20px; display:inline-block; vertical-align:middle; transition: var(--transition); }
     .social a:hover .ig { transform: scale(1.2); }
+
+    /* FAQ styles */
+    #faq-wrapper{ max-width:800px; margin-top:1.5rem; }
+    details{ 
+      border:1px solid var(--border); 
+      border-radius:var(--radius); 
+      padding:0.9rem 1rem; 
+      margin-bottom:0.8rem; 
+      background:#fff;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    details[open]{
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      background:#fffdf7;
+    }
+    details summary{
+      font-weight:600;
+      list-style:none;
+      outline:none;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+    details summary::after{
+      content:"+";
+      float:right;
+      font-weight:bold;
+      color:var(--gold);
+    }
+    details[open] summary::after{
+      content:"–";
+    }
+    details p{
+      margin-top:0.6rem;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
     footer{ background:#111; color:#eee; text-align:center; padding:2.5rem; font-size:.9rem; margin-top:3rem }
+
     @media (max-width: 768px) {
       header { padding: 1rem; }
       .menu-toggle { display: block; }
@@ -118,8 +132,8 @@
       nav a:last-child { border-bottom: none; }
       section { padding: 2.5rem 1rem; }
       .hero { padding: 2.5rem 1rem 3.5rem; }
-      .cart-inner { max-width: 95%; }
     }
+
     .loading { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(212, 160, 23, 0.3); border-radius: 50%; border-top-color: var(--gold); animation: spin 1s ease-in-out infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
@@ -132,7 +146,7 @@
   </script>
 </head>
 <body>
-  <!-- Banner with YOUR background photo -->
+  <!-- Banner -->
   <div class="banner">
     <header>
       <div class="brand">
@@ -145,86 +159,111 @@
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <nav id="mainNav">
         <a href="#about">About</a>
-        <a href="#jams">Jams</a>
+        <a href="#jams">Fruit Butters</a>
         <a href="#cookies">Cookies</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#custom">Custom</a>
+        <a href="#gift-box">Gift Box</a>
+        <a href="#order">Order Form</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
     <div class="hero">
-      <h1>Small-Batch <span class="gold">Jams</span> & Fresh-Baked <span class="gold">Cookies</span></h1>
-      <p>Naturally vibrant flavors made in Monterey Bay. Ship nationwide or schedule local pickup.</p>
-      <a href="#jams" class="btn">Shop the Menu</a>
+      <h1>Small-Batch <span class="gold">Fruit Butters</span> & Fresh-Baked <span class="gold">Cookies</span></h1>
+      <p>Naturally vibrant flavors made in the Monterey Bay. Perfect for gifting, brunch tables, and everyday treats.</p>
+      <a href="#jams" class="btn">View Fruit Butters & Cookies</a>
     </div>
   </div>
 
-  <!-- About Section with YOUR photo -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Liz</h2>
     <div class="about-wrap">
       <div class="about-photo">
-        <img src="images/liz-portrait.jpg" alt="Liz Hayes portrait" loading="lazy">
+        <img src="images/flavorswithliz-liz-portrait.jpg" alt="Liz Hayes of Flavors With Liz" loading="lazy">
       </div>
       <div>
-        <p class="lead">Hi, I’m Liz! FlavorsWithLiz started in my kitchen with a love for flavor and a passion for sharing it. I believe the best treats come from the heart — made with real ingredients, a bit of creativity, and plenty of love. From smooth fruit butters to fresh baked cookies, my goal is to make every bite feel warm, comforting, and full of flavor.</p>
+        <p class="lead">
+          Hi, I’m Liz! FlavorsWithLiz started in my kitchen with a love for flavor and a passion for sharing it. 
+          I believe the best treats come from the heart — made with real ingredients, a bit of creativity, and plenty of love. 
+          From sweet fruit butters to fresh-baked cookies, my goal is to make every bite feel warm, comforting, and full of flavor.
+        </p>
         <ul>
           <li>Locally sourced fruit when in season</li>
-          <li>No artificial colors or preservatives only personality</li>
-          <li>Packed and shipped with care from Monterey Bay</li>
+          <li>No artificial colors or preservatives — just personality</li>
+          <li>Packed and shipped with care from my home to yoursy</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Jams Section with YOUR product photos -->
+  <!-- Fruit Butters -->
   <section id="jams">
-    <h2>Jams</h2>
-    <p class="lead">Spread-worthy jars cooked low and slow.</p>
+    <h2>Fruit Butters</h2>
+    <p class="lead">Spread-worthy fruit butters cooked low and slow. Each jar is 4oz — perfect for toast, waffles, cheese boards, and gifting.</p>
+    <p class="lead"><strong>$8 per 4oz jar</strong></p>
     <div class="grid">
-      <article class="card" data-id="jam-strawberry" data-name="Small-Batch Strawberry Jam" data-price="9.5" data-type="Jam">
+      <!-- Strawberry -->
+      <article class="card" data-id="butter-strawberry" data-name="Strawberry Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
         <div class="media">
-          <img src="images/strawberry-jam.jpg" alt="Small-Batch Strawberry Jam" loading="lazy">
+          <img src="images/flavorswithliz-strawberry-butter.jpg" alt="Strawberry fruit butter in a jar" loading="lazy">
         </div>
         <div class="body">
           <div class="row">
-            <div class="title">Small-Batch Strawberry Jam <span class="pill">Bestseller</span></div>
+            <div class="title">Strawberry Fruit Butter <span class="pill">Bestseller</span></div>
           </div>
-          <p class="desc">Sun-ripened berries, lemon, and a hint of vanilla.</p>
+          <p class="desc">Sun-ripened strawberries, a whisper of lemon, and a touch of warm spice for cozy PB&Js and breakfast boards.</p>
           <div class="row">
-            <div class="price">$9.50</div>
+            <div class="price">$8 / 4oz</div>
             <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-id="jam-peach" data-name="Vanilla Peach Jam" data-price="10" data-type="Jam">
-        <div class="media">
-          <img src="images/peach-jam.jpg" alt="Vanilla Peach Jam" loading="lazy">
-        </div>
-        <div class="body">
-          <div class="title">Vanilla Peach Jam</div>
-          <p class="desc">Golden peaches slow-cooked with Madagascar vanilla.</p>
-          <div class="row">
-            <div class="price">$10.00</div>
-            <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
+            <a href="#order" class="addbtn">Add to Order Form</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-id="jam-blueberry" data-name="Blueberry + Lemon Zest Jam" data-price="10.5" data-type="Jam">
+      <!-- Peach -->
+      <article class="card" data-id="butter-peach" data-name="Peach Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
         <div class="media">
-          <img src="images/blueberry-jam.jpg" alt="Blueberry + Lemon Zest Jam" loading="lazy">
+          <img src="images/flavorswithliz-peach-butter.jpg" alt="Peach fruit butter in a jar" loading="lazy">
         </div>
         <div class="body">
-          <div class="title">Blueberry + Lemon Zest Jam</div>
-          <p class="desc">Bright citrus lifts juicy wild blueberries.</p>
+          <div class="title">Peach Fruit Butter</div>
+          <p class="desc">Golden peaches slowly cooked down until smooth and silky — amazing on biscuits, yogurt, and ice cream.</p>
           <div class="row">
-            <div class="price">$10.50</div>
+            <div class="price">$8 / 4oz</div>
             <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
+            <a href="#order" class="addbtn">Add to Order Form</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Apple -->
+      <article class="card" data-id="butter-apple" data-name="Apple Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
+        <div class="media">
+          <img src="images/flavorswithliz-apple-butter.jpg" alt="Apple fruit butter in a jar" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Apple Fruit Butter</div>
+          <p class="desc">Slow-cooked apples with cozy spices that taste like homemade pie in a jar. Perfect for toast and oatmeal.</p>
+          <div class="row">
+            <div class="price">$8 / 4oz</div>
+            <div class="spacer"></div>
+            <a href="#order" class="addbtn">Add to Order Form</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mixed Fruit -->
+      <article class="card" data-id="butter-mixed" data-name="Mixed Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
+        <div class="media">
+          <img src="images/flavorswithliz-mixed-fruit-butter.jpg" alt="Mixed fruit butter in a jar" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Mixed Fruit Butter</div>
+          <p class="desc">A bright blend of seasonal fruits slow-cooked together for a layered, jammy flavor that changes with the harvest.</p>
+          <div class="row">
+            <div class="price">$8 / 4oz</div>
+            <div class="spacer"></div>
+            <a href="#order" class="addbtn">Add to Order Form</a>
           </div>
         </div>
       </article>
@@ -233,73 +272,254 @@
 
   <div class="sep"></div>
 
-  <!-- Cookies Section with YOUR product photos -->
+  <!-- Cookies -->
   <section id="cookies">
     <h2>Cookies</h2>
-    <p class="lead">Baked to order.</p>
+    <p class="lead">Baked to order in small batches so they arrive fresh and ready to share.</p>
+    <p class="lead"><strong>$10 per half dozen (6 cookies)</strong></p>
     <div class="grid">
-      <article class="card" data-id="cookie-choc" data-name="Salted Chocolate Chunk (6)" data-price="14" data-type="Cookie">
+      <!-- Chocolate Chip -->
+      <article class="card" data-id="cookie-choc-chip" data-name="Chocolate Chip Cookies (6)" data-price="10" data-type="Cookies">
         <div class="media square">
-          <img src="images/chocolate-cookies.jpg" alt="Salted Chocolate Chunk Cookies" loading="lazy">
+          <img src="images/flavorswithliz-chocolate-chip-cookies.jpg" alt="Chocolate chip cookies on a plate" loading="lazy">
         </div>
         <div class="body">
           <div class="row">
-            <div class="title">Salted Chocolate Chunk (6) <span class="pill">New</span></div>
+            <div class="title">Chocolate Chip (6) <span class="pill">Classic</span></div>
           </div>
-          <p class="desc">Crisp edges, gooey center, sea salt finish.</p>
+          <p class="desc">Soft and chewy, loaded with chocolate chips and a hint of vanilla for that bakery-style bite.</p>
           <div class="row">
-            <div class="price">$14.00</div>
+            <div class="price">$10 / half dozen</div>
             <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" data-id="cookie-oat" data-name="Brown Butter Oatmeal Raisin (6)" data-price="13" data-type="Cookie">
-        <div class="media square">
-          <img src="images/oatmeal-cookies.jpg" alt="Brown Butter Oatmeal Raisin" loading="lazy">
-        </div>
-        <div class="body">
-          <div class="title">Brown Butter Oatmeal Raisin (6)</div>
-          <p class="desc">Toasty oats, plump raisins, cinnamon.</p>
-          <div class="row">
-            <div class="price">$13.00</div>
-            <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
+            <a href="#order" class="addbtn">Add to Order Form</a>
           </div>
         </div>
       </article>
 
-      <article class="card" data-id="cookie-lemon" data-name="Lemon Sugar Cookies (6)" data-price="12.5" data-type="Cookie">
+      <!-- Banana Bread Chocolate Chip -->
+      <article class="card" data-id="cookie-banana-choc" data-name="Banana Bread Chocolate Chip Cookies (6)" data-price="10" data-type="Cookies">
         <div class="media square">
-          <img src="images/lemon-cookies.jpg" alt="Lemon Sugar Cookies" loading="lazy">
+          <img src="images/flavorswithliz-banana-bread-cookies.jpg" alt="Banana bread chocolate chip cookies" loading="lazy">
         </div>
         <div class="body">
-          <div class="title">Lemon Sugar Cookies (6)</div>
-          <p class="desc">Bright lemon glaze, tender crumb.</p>
+          <div class="title">Banana Bread Chocolate Chip (6)</div>
+          <p class="desc">All the cozy flavor of banana bread in cookie form, studded with melty chocolate chips.</p>
           <div class="row">
-            <div class="price">$12.50</div>
+            <div class="price">$10 / half dozen</div>
             <div class="spacer"></div>
-            <button class="addbtn">Add to Order</button>
+            <a href="#order" class="addbtn">Add to Order Form</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Oatmeal Raisin -->
+      <article class="card" data-id="cookie-oatmeal-raisin" data-name="Oatmeal Raisin Cookies (6)" data-price="10" data-type="Cookies">
+        <div class="media square">
+          <img src="images/flavorswithliz-oatmeal-raisin-cookies.jpg" alt="Oatmeal raisin cookies" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Oatmeal Raisin (6)</div>
+          <p class="desc">Chewy oats, plump raisins, and warm cinnamon for a nostalgic, comforting cookie.</p>
+          <div class="row">
+            <div class="price">$10 / half dozen</div>
+            <div class="spacer"></div>
+            <a href="#order" class="addbtn">Add to Order Form</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sugar Cookies -->
+      <article class="card" data-id="cookie-sugar" data-name="Sugar Cookies (6)" data-price="10" data-type="Cookies">
+        <div class="media square">
+          <img src="images/flavorswithliz-sugar-cookies.jpg" alt="Sugar cookies with sugar topping" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="title">Sugar Cookies (6)</div>
+          <p class="desc">Soft, buttery sugar cookies with a delicate sweetness — perfect for decorating or enjoying as-is.</p>
+          <div class="row">
+            <div class="price">$10 / half dozen</div>
+            <div class="spacer"></div>
+            <a href="#order" class="addbtn">Add to Order Form</a>
           </div>
         </div>
       </article>
     </div>
   </section>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlzsHyYKtVMqb-eBXTVEG6VGXICSvII_Cxx5ePqLc9YigVng/viewform?embedded=true" width="640" height="895" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-Loading…
-</iframe>
 
-  <!-- Rest of your sections... -->
+  <div class="sep"></div>
+
+  <!-- Gift / Sampler Box -->
+  <section id="gift-box">
+    <h2>Sampler Gift Box</h2>
+    <p class="lead">
+      Want to share Flavors With Liz? Choose a sampler gift box that includes tastes of everything.
+    </p>
+    <div class="grid">
+      <article class="card" data-id="gift-sampler" data-name="Sampler Gift Box" data-type="Gift Box">
+        <div class="media">
+          <img src="images/flavorswithliz-sampler-gift-box.jpg" alt="Sampler gift box with mini fruit butters and cookies" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="row">
+            <div class="title">Sampler Gift Box</div>
+          </div>
+          <p class="desc">
+            Includes three mini fruit butters (1.5oz each: Apple, Strawberry, and Peach) 
+            plus 6 cookies (2 Chocolate Chip, 2 Banana Bread Chocolate Chip, 2 Sugar Cookies). 
+            A thoughtful way to treat friends, family, coworkers, or yourself.
+          </p>
+          <p class="desc"><strong>Pricing:</strong> Please see the order form and note your quantity and any special requests.</p>
+          <div class="row">
+            <div class="price">Custom gift option</div>
+            <div class="spacer"></div>
+            <a href="#order" class="addbtn">Add Gift Box to Order Form</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- Order Form (Google Form embed) -->
+  <section id="order">
+    <h2>Order Form</h2>
+    <p class="lead">
+      Ready to order? Use the form below to tell me what you’d like — 
+      choose your fruit butters, cookies, and sampler boxes, and I’ll follow up to confirm details and payment.
+    </p>
+    <ul>
+      <li>$8 per 4oz fruit butter (Apple, Strawberry, Peach, Mixed Fruit)</li>
+      <li>$10 per half dozen cookies (Chocolate Chip, Banana Bread Chocolate Chip, Oatmeal Raisin, Sugar)</li>
+      <li>Sampler gift box includes mini jars of three fruit butters plus 6 cookies (2 of each flavor)</li>
+    </ul>
+
+    <div style="margin-top:1.5rem;">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdlzsHyYKtVMqb-eBXTVEG6VGXICSvII_Cxx5ePqLc9YigVng/viewform?embedded=true" 
+        width="100%" 
+        height="900" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+      </iframe>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>FAQ</h2>
+    <p class="lead">
+      A few quick answers to common questions. If you’re still wondering about something, feel free to reach out!
+    </p>
+    <div id="faq-wrapper">
+      <details>
+        <summary>Where are your treats made?</summary>
+        <p>
+          All fruit butters and cookies are made in a home kitchen in the Monterey Bay area.
+          I follow safe food-handling practices and prep in small batches so everything tastes fresh and homemade.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do your products contain allergens?</summary>
+        <p>
+          Yes, many items contain common allergens such as wheat, dairy, eggs, and gluten. 
+          While I do my best to avoid cross-contact, everything is made in the same home kitchen, 
+          so I cannot guarantee an allergen-free environment. Please share any allergies in your order form notes.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is your refund or cancellation policy?</summary>
+        <p>
+          Because everything is made fresh to order, all sales are final once payment is received.  
+          If you need to cancel or adjust your order, please contact me as soon as possible 
+          <strong>before</strong> payment or within the timeframe noted in your confirmation email.  
+          I’m always happy to work with you when I can.
+        </p>
+      </details>
+
+      <details>
+        <summary>How long do the fruit butters and cookies stay fresh?</summary>
+        <p>
+          Fruit butters keep best when stored in the refrigerator and enjoyed within 2–3 weeks after opening.  
+          Cookies are best within 2–3 days of pickup or delivery for peak freshness, 
+          but you can freeze them in an airtight container to enjoy later.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you offer pickup, shipping, or both?</summary>
+        <p>
+          I currently offer local pickup in the Monterey Bay area and shipping within the U.S.  
+          You can choose your preference in the order form. Pickup details and shipping timing will be confirmed by email.
+        </p>
+      </details>
+
+      <details>
+        <summary>How far in advance should I place my order?</summary>
+        <p>
+          For most orders,  up to 5 days’ notice is perfect. For larger or event orders, 
+          I recommend reaching out at least 2 weeks in advance so I can plan ingredients and baking time.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you take custom or special-event orders?</summary>
+        <p>
+          Yes! I love working on gifts, party favors, office thank-yous, and seasonal specials.  
+          Use the notes section on the order form or email me directly, and we can chat about flavors, quantities, and timing.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I actually pay?</summary>
+        <p>
+          After you submit the order form, I’ll email you an order summary and total.  
+          Payment options typically include Zelle, PayPal, and cash for local pickup.  
+          Once payment is received, I’ll begin preparing your order.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact" class="centered">
+    <h2>Contact</h2>
+    <p class="lead">
+      Have a question, custom request, or want to chat about a special event? 
+      Reach out and we’ll create something delicious together.
+    </p>
+    <p>Email: <a href="mailto:Flavorswithliz@gmail.com">Flavorswithliz@gmail.com</a></p>
+    <div class="social">
+      <!-- Example Instagram icon placeholder; swap with your real link/icon -->
+      <a href="https://instagram.com/" target="_blank" rel="noopener">
+        <span class="ig">Follow me on Instagram</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="2025"></span> Flavors With Liz. All rights reserved.
+  </footer>
 
   <script>
+    // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.getElementById('mainNav');
     menuToggle.addEventListener('click', () => {
       mainNav.classList.toggle('open');
     });
-    // Your existing JavaScript...
   </script>
 </body>
 </html>
+
+
+

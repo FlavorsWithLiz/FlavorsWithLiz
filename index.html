@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Small-batch fruit butters and cookies by Flavors With Liz. Apple, strawberry, peach, and mixed fruit butters with fresh-baked cookies, plus gift sampler boxes.">
-  
+
+  <!-- SEO Meta Tags -->
+  <title>Flavors With Liz – Small-Batch Fruit Butters, Cookies & Gift Boxes</title>
+
+  <meta name="description" content="Small-batch fruit butters and fresh-baked cookies made in the Monterey Bay. Enjoy strawberry, peach, apple, and mixed fruit butters, plus homemade cookies and sampler gift boxes. Local pickup & U.S. shipping available.">
+
+  <meta name="keywords" content="fruit butter, homemade cookies, small batch, Monterey Bay food, strawberry butter, apple butter, peach butter, mixed fruit butter, sampler gift box, artisan treats, handmade food gifts">
+
+  <meta name="author" content="Flavors With Liz">
+
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="Flavors With Liz – Small-Batch Fruit Butters & Fresh-Baked Cookies">
+  <meta property="og:description" content="Handcrafted fruit butters, cookies, and sampler gift boxes made fresh in the Monterey Bay. Perfect for gifting and everyday treats.">
+  <meta property="og:image" content="https://flavorswithliz.com/images/flavorswithliz-background.jpg">
+  <meta property="og:url" content="https://flavorswithliz.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flavors With Liz – Small-Batch Fruit Butters & Cookies">
+  <meta name="twitter:description" content="Homemade fruit butters, cookies, and sampler boxes — made with love in the Monterey Bay.">
+  <meta name="twitter:image" content="https://flavorswithliz.com/images/flavorswithliz-background.jpg">
+
   <!-- Security headers -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <!-- (Your CSS and remaining code would continue here...) -->
+
+</head>
+<body>
+
+<!-- Your full page content should go here. I inserted only the head section with SEO as requested. Let me know if you want me to paste the *entire* page again with SEO included. -->
+
+</body>
+</html>
   
   <title>Flavors With Liz</title>
   <style>
@@ -55,9 +89,17 @@
     ul{ line-height:1.8; color:#555; padding-left:1.1rem }
     .sep{ height:1px; background:var(--border); margin:2rem 0 }
     .gold{ color:var(--gold) }
+
+    /* Base grid */
     .grid{ display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1.5rem }
     @media(min-width:600px){ .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem } }
     @media(min-width:900px){ .grid{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem } }
+
+    /* 2-column-only grid for Fruit Butters & Cookies */
+    .grid-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    @media(min-width:600px){ .grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(min-width:900px){ .grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
     .card{ border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#fff; transition:var(--transition); display:flex; flex-direction: column; height: 100%; }
     .card:hover{ box-shadow:0 8px 24px rgba(0,0,0,.1); transform: translateY(-5px); }
     .media{ aspect-ratio:4/3; width:100%; background:#fafafa; display:grid; place-items:center; overflow:hidden }
@@ -73,17 +115,27 @@
     .row .spacer{ flex:1 }
     .addbtn{ background:var(--ink); color:#fff; padding:.6rem 1rem; border:none; border-radius:8px; cursor:pointer; font-weight:700; font-size:.9rem; transition: var(--transition); display:inline-block; text-decoration:none; text-align:center; }
     .addbtn:hover { background: var(--gold); transform: scale(1.05); }
+
     .about-wrap{ display:grid; gap:2rem }
     @media(min-width:900px){ .about-wrap{ grid-template-columns:1fr 1.2fr; align-items: center; } }
     .about-photo{ border:1px solid var(--border); border-radius:18px; overflow:hidden; background:#fafafa; aspect-ratio:4/3; display:grid; place-items:center }
     .about-photo img{ width:100%; height:100%; object-fit:cover; display:block }
+
     .centered{ text-align:center }
     .centered h2:after { left: 50%; transform: translateX(-50%); }
     .centered ul{ list-style:none; padding:0 }
     .centered li{ margin:.5rem 0; color:#555 }
+
     .social{ display:flex; justify-content:center; align-items:center; gap:.6rem; margin-top:1.5rem; }
     .ig{ width:20px; height:20px; display:inline-block; vertical-align:middle; transition: var(--transition); }
     .social a:hover .ig { transform: scale(1.2); }
+
+    /* Center & size the Sampler Gift Box card */
+    #gift-box .grid {
+      max-width: 420px;
+      margin: 1.5rem auto 0;
+      grid-template-columns: 1fr;
+    }
 
     /* FAQ styles */
     #faq-wrapper{ max-width:800px; margin-top:1.5rem; }
@@ -159,7 +211,7 @@
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <nav id="mainNav">
         <a href="#about">About</a>
-        <a href="#jams">Fruit Butters</a>
+        <a href="#Fruit butters">Fruit Butters</a>
         <a href="#cookies">Cookies</a>
         <a href="#gift-box">Gift Box</a>
         <a href="#order">Order Form</a>
@@ -174,34 +226,13 @@
     </div>
   </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Liz</h2>
-    <div class="about-wrap">
-      <div class="about-photo">
-        <img src="images/flavorswithliz-liz-portrait.jpg" alt="Liz Hayes of Flavors With Liz" loading="lazy">
-      </div>
-      <div>
-        <p class="lead">
-          Hi, I’m Liz! FlavorsWithLiz started in my kitchen with a love for flavor and a passion for sharing it. 
-          I believe the best treats come from the heart — made with real ingredients, a bit of creativity, and plenty of love. 
-          From sweet fruit butters to fresh-baked cookies, my goal is to make every bite feel warm, comforting, and full of flavor.
-        </p>
-        <ul>
-          <li>Locally sourced fruit when in season</li>
-          <li>No artificial colors or preservatives — just personality</li>
-          <li>Packed and shipped with care from my home to yours</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- Fruit Butters -->
   <section id="jams">
     <h2>Fruit Butters</h2>
     <p class="lead">Spread-worthy fruit butters cooked low and slow. Each jar is 4oz — perfect for toast, waffles, cheese boards, and gifting.</p>
     <p class="lead"><strong>$8 per 4oz jar</strong></p>
-    <div class="grid">
+    <!-- 2 x 2 layout here -->
+    <div class="grid grid-2">
       <!-- Strawberry -->
       <article class="card" data-id="butter-strawberry" data-name="Strawberry Fruit Butter (4oz)" data-price="8" data-type="Fruit Butter">
         <div class="media">
@@ -277,7 +308,8 @@
     <h2>Cookies</h2>
     <p class="lead">Baked to order in small batches so they arrive fresh and ready to share.</p>
     <p class="lead"><strong>$10 per half dozen (6 cookies)</strong></p>
-    <div class="grid">
+    <!-- 2 x 2 layout here -->
+    <div class="grid grid-2">
       <!-- Chocolate Chip -->
       <article class="card" data-id="cookie-choc-chip" data-name="Chocolate Chip Cookies (6)" data-price="10" data-type="Cookies">
         <div class="media square">
@@ -335,7 +367,7 @@
         </div>
         <div class="body">
           <div class="title">Sugar Cookies (6)</div>
-          <p class="desc">Soft, buttery sugar cookies with a delicate sweetness — perfect for decorating or enjoying as-is.</p>
+          <p class="desc">Soft, buttery sugar cookies with a delicate sweetness that is perfect enjoying at any time.</p>
           <div class="row">
             <div class="price">$10</div>
             <div class="spacer"></div>
@@ -349,9 +381,9 @@
   <div class="sep"></div>
 
   <!-- Gift / Sampler Box -->
-  <section id="gift-box">
+  <section id="gift-box" class="centered">
     <h2>Sampler Gift Box</h2>
-    <p class="lead">
+    <p class="leadclass="centered">
       Want to share Flavors With Liz? Choose a sampler gift box that includes tastes of everything.
     </p>
     <div class="grid">
@@ -364,13 +396,12 @@
             <div class="title">Sampler Gift Box</div>
           </div>
           <p class="desc">
-            Includes three mini fruit butters (1.5oz each: Apple, Strawberry, Peach and Mixed fruit) 
-            plus 8 cookies (2 Chocolate Chip, 2 Banana Bread Chocolate Chip, 2 Sugar and 2 Oatmeal Raisin cookies). 
+            Includes four mini fruit butters of each flavor and 8 cookies 2 of each flavor.
             A thoughtful way to treat friends, family, coworkers, or yourself.
           </p>
-          <p class="desc"><strong>Pricing:</strong> Please see the order form and note your quantity and any special requests.</p>
+        
           <div class="row">
-            <div class="price">Custom gift option</div>
+            <div class="price">Custom gift option available</div>
             <div class="spacer"></div>
             <a href="#order" class="addbtn">$25</a>
           </div>
@@ -404,6 +435,30 @@
         marginwidth="0">
         Loading…
       </iframe>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- About Section (moved below products & order) -->
+  <section id="about">
+    <h2>About Liz</h2>
+    <div class="about-wrap">
+      <div class="about-photo">
+        <img src="images/flavorswithliz-liz-portrait.jpg" alt="Liz Hayes of Flavors With Liz" loading="lazy">
+      </div>
+      <div>
+        <p class="lead">
+          Hi, I’m Liz! FlavorsWithLiz started in my kitchen with a love for flavor and a passion for sharing it. 
+          I believe the best treats come from the heart — made with real ingredients, a bit of creativity, and plenty of love. 
+          From sweet fruit butters to fresh-baked cookies, my goal is to make every bite feel warm, comforting, and full of flavor.
+        </p>
+        <ul>
+          <li>Locally sourced fruit when in season</li>
+          <li>No artificial colors or preservatives — just personality</li>
+          <li>Packed and shipped with care from my home to yours</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -490,21 +545,20 @@
   <!-- Contact / Footer -->
   <section id="contact" class="centered">
     <h2>Contact</h2>
-    <p class="lead">
+    <p class="leadclass="centered"">
       Have a question, custom request, or want to chat about a special event? 
       Reach out and we’ll create something delicious together.
     </p>
     <p>Email: <a href="mailto:Flavorswithliz@gmail.com">Flavorswithliz@gmail.com</a></p>
     <div class="social">
-      <!-- Example Instagram icon placeholder; swap with your real link/icon -->
       <a href="https://www.instagram.com/flavorswithliz/?hl=am-et" target="_blank" rel="noopener">
-        <span class="ig">Follow me</span>
+        </p> <span classclass="centered="ig">Follow me on Instagram</span>
       </a>
     </div>
   </section>
 
   <footer>
-    &copy; <span id="2025"></span> Flavors With Liz. All rights reserved 2025.
+    &copy; <span id="year"></span> Flavors With Liz. All rights reserved.
   </footer>
 
   <script>
@@ -520,6 +574,3 @@
   </script>
 </body>
 </html>
-
-
-
